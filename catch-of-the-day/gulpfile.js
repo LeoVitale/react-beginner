@@ -65,15 +65,18 @@ function handleErrors() {
 }
 
 function buildScript(file, watch) {
+
   var props = {
     entries: ['./scripts/' + file],
     debug : true,
-    transform:  [babelify.configure({presets: ["stage-0","es2015", "react"]})]
-    //transform:  [babelify.configure({stage : 0 })]
+    transform: [babelify.configure({
+                presets: ["stage-0", "es2015", "react"]
+            })]
+            //transform:  [babelify.configure({stage : 0 })]
 
-};
+  };
 
-  // watchify() if watch requested, otherwise run browserify() once 
+  // watchify() if watch requested, otherwise run browserify() once
   var bundler = watch ? watchify(browserify(props)) : browserify(props);
 
   function rebundle() {
@@ -101,7 +104,7 @@ function buildScript(file, watch) {
 }
 
 gulp.task('scripts', function() {
-  return buildScript('main.js', false); // this will run once because we set watch to false
+  return buildScript('main.js', false); // this will once run once because we set watch to false
 });
 
 // run 'scripts' task first, then watch for future changes
