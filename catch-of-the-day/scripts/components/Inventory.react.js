@@ -11,7 +11,8 @@ var Inventory = React.createClass({
     return (
       <div>
         <p>Inventory</p>
-      <AddFishForm {...this.props}/>
+        <AddFishForm {...this.props} />
+        <button onClick={this.props.loadSamples}>Load Sample Fishes</button>
       </div>
     )
   }
