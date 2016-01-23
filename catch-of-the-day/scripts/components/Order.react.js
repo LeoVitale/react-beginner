@@ -15,7 +15,7 @@ var Order = React.createClass({
     }
 
     return (
-      <li>
+      <li key={key}>
         {count}lbs
         {fish.name}
         <span className="price">{h.default.formatPrice(count * fish.price)}</span>
@@ -23,7 +23,7 @@ var Order = React.createClass({
   },
   render : function() {
     var orderIds = Object.keys(this.props.order);
-    console.log(this);
+
     var total= orderIds.reduce((prevTotal, key)=>{
       var fish = this.props.fishes[key];
       var count = this.props.order[key];

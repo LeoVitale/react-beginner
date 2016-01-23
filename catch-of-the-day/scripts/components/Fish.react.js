@@ -3,7 +3,7 @@ var h = require('../helpers');
 
 var Fish = React.createClass({
   onButtonClick : function(){
-    console.log('chupa ', this.props.index);
+
     var key = this.props.index;
     this.props.addToOrder(key);
   },
@@ -12,6 +12,7 @@ var Fish = React.createClass({
     var isAvailable = (details.status === 'available' ? true : false);
     var buttonText = (isAvailable ? 'Add to Order' :  'Sold Out!');
     return (
+
       <li className="menu-fish">
         <img src={details.image} alt={details.name} />
         <h3 className="fish-name">

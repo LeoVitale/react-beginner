@@ -16,6 +16,7 @@ var App = require('./components/app.react');
 /*
   Routes
 */
+
 var routes = (
   <Router history={createBrowserHistory.createHistory()}>
     <Route path="/" component={StorePicker}/>
