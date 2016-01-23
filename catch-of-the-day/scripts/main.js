@@ -8,7 +8,6 @@ var History = ReactRouter.History;
 var createBrowserHistory = require('history');
 //createBrowserHistory.createHistory();
 
-var h = require('./helpers');
 var NotFound = require('./components/NotFound.react');
 var StorePicker = require('./components/StorePicker.react');
 var App = require('./components/app.react');
