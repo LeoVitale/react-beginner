@@ -4,6 +4,7 @@ var Order = require('./Order.react');
 var Inventory = require('./Inventory.react');
 var Fish = require('./Fish.react');
 
+
 //Firebase
 var Rebase = require('re-base');
 var base = Rebase.createClass('https://leo-catch-of-the-day.firebaseio.com/');

@@ -1,5 +1,6 @@
 var React = require('react');
 var h = require('../helpers');
+var CSStransitionGroup = require('react-addons-css-transition-group');
 /*
   Order
   <Order/>
@@ -17,10 +18,18 @@ var Order = React.createClass({
 
     return (
       <li key={key}>
-        {count}lbs
-        {fish.name}
+        <span>
+        <CSStransitionGroup
+          component="span"
+          transitionName="count"
+          transitionLeaveTimeout={250}
+          transitionEnterTimeout={250}>
+          <span key={count}>{count}</span>
+        </CSStransitionGroup>
+        lbs {fish.name} {removeButton}
+        </span>
         <span className="price">{h.default.formatPrice(count * fish.price)}</span>
-        {removeButton}
+
       </li>)
   },
   render : function() {
@@ -40,13 +49,17 @@ var Order = React.createClass({
     return (
       <div className="order-wrap">
         <h2 className="order-title">Your Order</h2>
-        <ul className="order">
+        <CSStransitionGroup className="order"
+                            component="ul"
+                            transitionName="order"
+                            transitionEnterTimeout={500}
+                            transitionLeaveTimeout={500}>
           {orderIds.map(this.renderOrder)}
           <li className="total">
             <strong>Total:</strong>
             {h.default.formatPrice(total)}
           </li>
-        </ul>
+        </CSStransitionGroup>
       </div>
     )
   }
