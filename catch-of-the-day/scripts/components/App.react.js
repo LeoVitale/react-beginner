@@ -1,15 +1,15 @@
-var React = require('react');
-var Header = require('./Header.react');
-var Order = require('./Order.react');
-var Inventory = require('./Inventory.react');
-var Fish = require('./Fish.react');
+import React from 'react';
+import Header from './Header.react';
+import Order  from './Order.react';
+import Inventory from './Inventory.react';
+import Fish from'./Fish.react';
 
 
 //Firebase
-var Rebase = require('re-base');
+import Rebase from 're-base';
 var base = Rebase.createClass('https://leo-catch-of-the-day.firebaseio.com/');
 
-var Catalyst = require('react-catalyst');
+import Catalyst from 'react-catalyst';
 
 /*
   App
@@ -90,4 +90,4 @@ var App = React.createClass({
   }
 });
 
-module.exports = App;
+export default App;
