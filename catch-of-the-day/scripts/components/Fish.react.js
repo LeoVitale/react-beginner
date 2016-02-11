@@ -12,7 +12,6 @@ var Fish = React.createClass({
     var isAvailable = (details.status === 'available' ? true : false);
     var buttonText = (isAvailable ? 'Add to Order' :  'Sold Out!');
     return (
-
       <li className="menu-fish">
         <img src={details.image} alt={details.name} />
         <h3 className="fish-name">
@@ -20,7 +19,7 @@ var Fish = React.createClass({
           <span className="price">{h.default.formatPrice(details.price)}</span>
         </h3>
         <p>{details.desc}</p>
-      <button disabled={!isAvailable} onClick={this.onButtonClick}>{buttonText}</button>
+        <button disabled={!isAvailable} onClick={this.onButtonClick}>{buttonText}</button>
       </li>
     );
   }
